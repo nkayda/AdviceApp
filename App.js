@@ -24,10 +24,10 @@ export default function App() {
     Quicksand_600SemiBold,
   });
 
-  const fetchAdvice = async () => {
+  const fetchJoke = async () => {
     
     try {
-      const jokeRequest = await fetch(`https://icanhazdadjoke.com/`, { headers: {Accept:  `application/json`} }); // add search?term=hipster
+      const jokeRequest = await fetch(`https://icanhazdadjoke.com/`, { headers: {Accept:  `application/json`} }); 
       const data = await jokeRequest.json();
 
       if (jokeRequest.ok) {
@@ -66,7 +66,7 @@ export default function App() {
 
       {image && <Image source={{ uri: image }} style={styles.image} />}
       
-      <Pressable style={styles.button} onPress={fetchAdvice}>
+      <Pressable style={styles.button} onPress={fetchJoke}>
         <Text style={styles.buttonText}>
           Click for Joke 
         </Text>
